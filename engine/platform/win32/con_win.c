@@ -124,8 +124,8 @@ static long _stdcall Wcon_WndProc( HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM l
 	case WM_CTLCOLORSTATIC:
 		if((HWND)lParam == s_wcd.hwndBuffer )
 		{
-			SetBkColor((HDC)wParam, RGB( 0x90, 0x90, 0x90 ));
-			SetTextColor((HDC)wParam, RGB( 0xff, 0xff, 0xff ));
+			SetBkColor((HDC)wParam, RGB( 0x00, 0x66, 0xc9 ));   //蓝色字体块背景
+			SetTextColor((HDC)wParam, RGB( 0xff, 0xff, 0xff )); //白 字体颜色
 			return (long)s_wcd.hbrEditBackground;
 		}
 		break;
@@ -145,7 +145,7 @@ static long _stdcall Wcon_WndProc( HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM l
 		}
 		break;
 	case WM_CREATE:
-		s_wcd.hbrEditBackground = CreateSolidBrush( RGB( 0x90, 0x90, 0x90 ));
+		s_wcd.hbrEditBackground = CreateSolidBrush( RGB( 0x00, 0x66, 0xc9 )); //蓝色背景
 		break;
 	}
 	return DefWindowProc( hWnd, uMsg, wParam, lParam );
